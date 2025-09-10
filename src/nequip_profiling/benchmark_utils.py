@@ -22,7 +22,7 @@ def get_structure(supercell=1):
     Returns:
         ase.Atoms: The structure with supercell applied
     """
-    structure_path = STRUCTURE_DIR / "Li6PS5Cl_conventional_cell_POSCAR.txt"
+    structure_path = STRUCTURE_DIR / "Li6PS5Cl_conventional_cell_POSCAR"
     atoms = ase.io.read(structure_path, format="vasp")
 
     if supercell != 1:

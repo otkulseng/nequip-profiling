@@ -8,4 +8,4 @@
 
 source .venv/bin/activate
 
-srun python -m nequip_profiling.bencmark_utils.py
+srun python src/nequip_profiling/benchmark_utils.py

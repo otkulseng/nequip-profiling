@@ -4,6 +4,7 @@ from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.units import fs
 import ase.io
 import pathlib
+from nequip.ase import NequIPCalculator
 
 import torch
 
@@ -104,3 +105,16 @@ def benchmark_calculator(calculator):
         )
 
     return results
+
+def main():
+    calculator = NequIPCalculator.from_compiled_model(
+        compile_path= "mir-group__NequIP-OAM-L__0.1.nequip.pt2",
+        device="cuda"
+    )
+
+
+    res = benchmark_calculator(calculator)
+
+
+if __name__ == '__main__':
+    main()

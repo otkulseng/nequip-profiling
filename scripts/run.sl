@@ -7,5 +7,9 @@
 
 
 source .venv/bin/activate
-
-srun python src/nequip_profiling/benchmark_utils.py
+module load cudatoolkit
+srun nsys profile \
+    --stats=true \
+    -t nvtx,cuda \
+    -o nsys_report \
+    python src/nequip_profiling/benchmark_utils.py
